@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "Welcome to JAE's blog"
+title: "Welcome to JAE's blog :)"
 ---
 
 # Welcome to JAE's blog.

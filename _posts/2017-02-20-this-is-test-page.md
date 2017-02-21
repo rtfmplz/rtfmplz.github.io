@@ -6,3 +6,4 @@ category: test
 
 # This is test page
 
+![jae](/images/jae.jpeg)

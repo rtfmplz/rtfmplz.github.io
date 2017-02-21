@@ -1,8 +1,8 @@
 # jekyll의 환경설정을 위한 Option들 입니다.
 # 아래 Option들은 터미널에서 jekyll을 실행할 때 플래그로 지정할 수 있습니다.
 # 환경설정 파일에 탭 문자를 사용하지 마세요
-# 사이트 변수: site.title 과 같은 방식으로 사용된다.
 
+# 사이트 변수: site.title 과 같은 방식으로 사용된다.
 title: JAE의 개인 기술 블로그
 description: JAE의 개인 기술 블로그 입니다.
 

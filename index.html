@@ -1,9 +1,14 @@
 ---
 layout: default
 title: 
+author: Jae
 ---
 
 <h1>Welcome to JAE&#39;s blog. :)</h1>
+
+{% assign author = site.data.profile[page.author] %}
+
+
 
 <ul>
     {% for post in site.posts %}
@@ -12,3 +17,7 @@ title:
 		</li>
     {% endfor %}
 </ul>
+
+<a rel="author" href="{{ author.email }}" title="{{ author.name }}">
+    To. {{ author.name }}
+</a>

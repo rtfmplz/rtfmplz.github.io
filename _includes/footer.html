@@ -1,2 +1,10 @@
+	{% assign author = site.data.profile[page.author] %}
+
+    {% if page.author %}
+		<a rel="author" href="mailto:{{ author.email }}" title="{{ author.name }}">
+		    To. {{ author.name }}
+		</a>
+	{% endif %}
+
     </body>
 </html>

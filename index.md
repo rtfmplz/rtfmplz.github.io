@@ -4,12 +4,16 @@ title:
 author: Jae
 ---
 
-<h1>Welcome to JAE&#39;s blog. :)</h1>
+<div id="home">
 
-<ul>
+<h1>Blog Posts</h1>
+
+<ul class="posts">
     {% for post in site.posts %}
     	<li> 
     		{{ post.date | date_to_string }} <a href="{{ post.url }}">{{ post.title }}</a>
 		</li>
     {% endfor %}
 </ul>
+
+</div>

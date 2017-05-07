@@ -4,11 +4,11 @@ title:
 author: Jae
 ---
 
-<div id="home">
+![jae](/images/jae.jpeg)
 
-<h1>Blog Posts</h1>
+## Blog Posts
 
-<ul class="posts">
+<ul>
     {% for post in site.posts %}
     	<li> 
     		{{ post.date | date_to_string }} <a href="{{ post.url }}">{{ post.title }}</a>
@@ -16,4 +16,3 @@ author: Jae
     {% endfor %}
 </ul>
 
-</div>

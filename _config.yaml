@@ -3,7 +3,7 @@
 # 환경설정 파일에 탭 문자를 사용하지 마세요
 
 # 사이트 변수: site.title 과 같은 방식으로 사용된다.
-title: JAE의 개인 기술 블로그
+title: JAE의 기술 블로그
 description: JAE의 개인 기술 블로그 입니다.
 
 # For more see: http://jekyllrb-ko.github.io/docs/permalinks/

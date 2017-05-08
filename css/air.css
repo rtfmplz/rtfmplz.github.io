@@ -156,25 +156,6 @@ body {
   text-align: center;
 }
 
-/* img 를 id prifile-img로 변경함 */
-#profile-img {
-  border-radius: 50%;
-  height: 200px;
-  margin: 0 auto;
-  width: 200px;
-}
-
-/* 
-  main 페이지의 ul을 가운데 정렬하기 위한 id
-  post의 제목이 길어지면 width를 늘려야 한다. 
-*/
-#main-ul{
-  width: 350px;
-  margin-left: auto;
-  margin-right: auto;
-
-}
-
 a,
 a:visited {
   color: #3498db;
@@ -208,4 +189,29 @@ li {
 
 p {
   color: #777;
+}
+
+/*******************************************/
+/*            개인적으로 추가한 ID             */
+/*******************************************/
+
+/* 
+ * img 를 id prifile-img로 변경함 
+ */
+#profile-img {
+  border-radius: 50%;
+  height: 200px;
+  margin: 0 auto;
+  width: 200px;
+}
+
+/* 
+ * main 페이지의 ul을 가운데 정렬하기 위한 id
+ * post의 제목이 길어지면 width를 늘려야 한다. 
+ */
+#main-ul{
+  width: 350px;
+  margin-left: auto;
+  margin-right: auto;
+
 }

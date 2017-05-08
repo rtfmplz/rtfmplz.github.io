@@ -206,11 +206,16 @@ p {
 }
 
 /* 
- * main 페이지의 ul을 가운데 정렬하기 위한 id
- * post의 제목이 길어지면 width를 늘려야 한다. 
+ * home과 about의 ul을 가운데 정렬하기 위한 id
  */
-#main-ul{
+#home-ul{
   width: 500px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#about-ul{
+  width: 250px;
   margin-left: auto;
   margin-right: auto;
 }

@@ -156,7 +156,8 @@ body {
   text-align: center;
 }
 
-img {
+/* img 를 id prifile-img로 변경함 */
+#profile-img {
   border-radius: 50%;
   height: 200px;
   margin: 0 auto;

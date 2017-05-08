@@ -4,7 +4,8 @@ title:
 author: Jae
 ---
 
-![jae](/images/private/jae.jpeg)
+<!-- profile-img id를 적용 -->
+<img id="profile-img" src="/images/private/jae.jpeg" alt="jae" />
 
 ## Blog Posts
 

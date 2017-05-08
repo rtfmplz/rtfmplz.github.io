@@ -4,7 +4,7 @@ title:
 author: Jae
 ---
 
-![jae](/images/jae.jpeg)
+![jae](/images/private/jae.jpeg)
 
 ## Blog Posts
 

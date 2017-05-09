@@ -35,7 +35,7 @@ layout: default
 
 
 ### Contact
-<ul id="about-ul" class="posts">
+<ul class="about">
     <li> <span> email </span> &raquo; <a href="mailto:{{ site.author.email }}" style="text-decoration:none"> {{ site.author.email }} </a> </li>
     <li> <span> pages </span> &raquo; <a href="http://{{ site.author.pages }}" style="text-decoration:none"> {{ site.author.pages }} </a> </li>
     <li> <span> linkedin </span> &raquo; <a href="http://{{ site.author.linkedin }}" style="text-decoration:none"> {{ site.author.linkedin }} </a> </li>

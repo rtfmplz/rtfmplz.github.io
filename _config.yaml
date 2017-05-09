@@ -9,6 +9,14 @@ description: JAE의 개인 기술 블로그 입니다.
 # For more see: http://jekyllrb-ko.github.io/docs/permalinks/
 permalink: /:categories/:year/:month/:day/:title 
 
+# author 정보
+author:
+    name: Jae Lee
+    email: kjlee.ko@gmail.com
+    pages: rtfmplz.github.io
+    linkedin: linkedin.com/in/rtfmplz
+    github: github.com/rtfmplz
+
 
 # Jekyll 의 환경설정 옵션들에 대한 디폴트 값 목록은 아래 링크에서 확인할 수 있다.
 # @see: http://jekyllrb-ko.github.io/docs/configuration/#section-4

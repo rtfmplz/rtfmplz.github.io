@@ -6,16 +6,14 @@ layout: default
 
 ## About me
 
-
-Korea
-
-이경재 (Jae Lee)
+* Korean
+* 
 
 
 ### Contact
 <ul id="about-ul">
-    <li> email: kjlee.ko@gmail.com </li>
-	<li> page: rtfmplz.github.io </li>
-	<li> linkedin: linkedin.com/in/rtfmplz </li>
-	<li> github: https://github.com/rtfmplz </li>
+    <li> email: <a href="mailto:{{ site.author.email }}" style="text-decoration:none"> {{ site.author.email }} </a> </li>
+    <li> pages: <a href="http://{{ site.author.pages }}" style="text-decoration:none"> {{ site.author.pages }} </a> </li>
+    <li> linkedin: <a href="http://{{ site.author.linkedin }}" style="text-decoration:none"> {{ site.author.linkedin }} </a> </li>
+    <li> github: <a href="http://{{ site.author.github }}" style="text-decoration:none"> {{ site.author.github }} </a> </li>
 </ul>

@@ -16,7 +16,7 @@
 
 		<!-- page.author가 있다면, _data/profile.yaml 에서 정보를 얻어 이메일 링크를 출력한다. -->
 		{% if page.author %}
-			{% assign author = site.data.profile[page.author] %}
+			{% assign author = site.author %}
 			<a rel="author" href="mailto:{{ author.email }}" title="{{ author.name }}" style="text-decoration:none">
 				To. {{ author.name }}
 			</a>

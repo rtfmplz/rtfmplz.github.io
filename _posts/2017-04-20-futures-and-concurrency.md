@@ -7,7 +7,7 @@ author: Jae
 
 > Programming in Scala by Martin Odersky 를 개인적인 공부 목적으로 정리한 포스트 입니다.
 
-#Futures and Concurrency
+# Futures and Concurrency
 
 > http://docs.scala-lang.org/overviews/core/futures.html
 > http://www.scala-lang.org/files/archive/api/current/

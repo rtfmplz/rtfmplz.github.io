@@ -7,7 +7,7 @@ author: Jae
 <!-- profile-img id를 적용 -->
 <img id="profile-img" src="/images/private/jae.jpeg" alt="jae" />
 
-## Blog Posts
+### Blog Posts
 
 <ul id="home-ul" class="posts">
     {% for post in site.posts %}

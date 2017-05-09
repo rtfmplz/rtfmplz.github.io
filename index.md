@@ -9,10 +9,10 @@ author: Jae
 
 ## Blog Posts
 
-<ul id="home-ul">
+<ul id="home-ul" class="posts">
     {% for post in site.posts %}
     	<li> 
-    		{{ post.date | date_to_string }} <a href="{{ post.url }}" style="text-decoration:none">{{ post.title }}</a>
+    		<span>{{ post.date | date_to_string }}</span> &raquo; <a href="{{ post.url }}" style="text-decoration:none">{{ post.title }}</a>
 		</li>
     {% endfor %}
 </ul>

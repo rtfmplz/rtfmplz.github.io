@@ -7,8 +7,8 @@
 		<link rel="stylesheet" href="/css/air.css">
 	</head>
 	<body>
-		<a href="/">Home</a>
-		<a href="/about">About me</a>
+		<a href="/" style="text-decoration:none">Home</a>
+		<a href="/about" style="text-decoration:none">About</a>
 
 		<!-- { content } : 포스트 또는 페이지 컨텐츠를 보여준다. -->
 		<!-- @see http://jekyllrb-ko.github.io/docs/variables/#section -->
@@ -17,7 +17,7 @@
 		<!-- page.author가 있다면, _data/profile.yaml 에서 정보를 얻어 이메일 링크를 출력한다. -->
 		{% if page.author %}
 			{% assign author = site.data.profile[page.author] %}
-			<a rel="author" href="mailto:{{ author.email }}" title="{{ author.name }}">
+			<a rel="author" href="mailto:{{ author.email }}" title="{{ author.name }}" style="text-decoration:none">
 				To. {{ author.name }}
 			</a>
 		{% endif %}

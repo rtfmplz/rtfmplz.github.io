@@ -89,6 +89,8 @@ zeppelin   4704      1  0  5월08 ?      00:04:27 /usr/java/jdk1.8.0_102/bin/jav
 ###### Interpreter 자체에 dependency 추가하기
 * interpreter > spark > Dependencies > groupId:artifactId:version or local file path 추가
 
+> Zeppelin은 ivy를 지원하지 않기 때문에 latest.integration 같은 ivy 문법은 사용할 수 없다.
+
 ![dependencies](/images/apache-zeppelin-with-spark/dependencies.png)
 
 > Interpreter의 설정을 변경하는 경우 Spark Interpreter를 restart 해주어야 한다.  

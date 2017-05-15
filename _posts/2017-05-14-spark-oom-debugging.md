@@ -7,11 +7,11 @@ author: Jae
 
 # Spark의 OutOfMemoryError 분석
 
-> Spark Application을 돌리다보면 FileNotFoundException 종종 보게된다. 도대체 왜! 무슨 File을 못찾겠다는 것인가.. 오늘 잃어버린 그 File을 찾아보자.
+> Spark Application 실행중 우리는 종종 FileNotFoundException 보게된다. 도대체 왜! 무슨 File을 못찾겠다는 것인가.. 오늘 잃어버린 그 File을 찾아보자.
 
 ## FileNotFoundException?? OutOfMemoryError!!
 
-FileNotFoundException 의 원인은 보통 Spark Executor 프로세스의 의도치 않은 종료(kill)이다. (뭐 간혹 프로그램을 잘못짜서 진짜로 파일이 없을수도 있겠다.. 하하..) Driver는 Job을 분할한 Task를 Executor에게 분배하고 일이 끝나면 결과를 돌려받기를 기대한다. 하지만 Executor가 죽어버려서 받아야 할 데이터(File)를 찾지 못하면 FileNotFoundException이 발생하는 것이다.
+FileNotFoundException 의 원인은 보통 Spark Executor 프로세스의 의도치 않은 종료(kill)이다. (뭐 간혹 프로그램을 잘못짜서 진짜로 파일이 없을수도 있겠다.. 하하..) Driver Program은 Job을 분할한 Task를 Executor에게 분배하고 일이 끝나면 결과를 돌려받기를 기대한다. 하지만 Executor가 의도치 않게 종료되어 버리면 받아야 할 데이터(File)를 찾지 못하게 되고 이 때 FileNotFoundException이 발생한다.
 
 종료된 Executor 의 에러 로그를 확인하면 "java.lang.OutOfMemoryError: Requested array size exceeds VM limit" 에러가 주 원인이고, Executor 프로세스가 의도치 않게 종료되면서 FileNotFoundException 이 발생하는 것을 확인할 수 있다.
 
@@ -30,7 +30,7 @@ FileNotFoundException 의 원인은 보통 Spark Executor 프로세스의 의도
 
 ## Solution
 
-Executor의 OutOfMemoryError 의 해결할 수 있는 방법을 소개한다.
+Executor의 OutOfMemoryError를 해결할 수 있는 방법을 소개한다.
 
 1. Executor 당 Memory를 증가시킨다.
 	* N의 크기가 별로 크지 않은 경우, Executor의 Memory를 약간 증가시키는 것으로 의외로 쉽게 문제를 해결할 수 있다.
@@ -38,7 +38,7 @@ Executor의 OutOfMemoryError 의 해결할 수 있는 방법을 소개한다.
 	* `spark.executor.memory` 옵션을 사용해서 조정할 수 있다.
 
 2. partition의 수를 늘린다.
-	* Join시 partition 수를 명시적으로 정할 수 있는데 이때 큰값을 준다. (Spark의 default partition 값은 200 이다.)
+	* Join시 partition 수를 명시적으로 정할 수 있는데 이때 기본 값보다 큰값을 준다. (Spark의 default partition 값은 200 이다.)
 	* Partition의 크기가 증가하면 특정 Task, 즉 Executor에 몰리는 데이터가 일부 분산되어 문제가 해결될 수 있다.
 	* 하지만 특정 Key에 데이터가 몰려있는 상황이라면 근본적인 해결책은 되지 않는다.
 	* 다음과 같은 방법으로 default partition 수를 변경 할 수도있다.
@@ -47,7 +47,7 @@ Executor의 OutOfMemoryError 의 해결할 수 있는 방법을 소개한다.
     sqlContext.setConf("spark.sql.shuffle.partitions", "800")
     ```
 
-3. 특정 Key가 가질 수 있는 Value의 수를 제한하는 것이다. 즉, N의 Limit를 정한다.
+3. 특정 Key가 가질 수 있는 Value의 수를 제한한다. 즉, N의 Limit를 정한다.
 	* 이 방법은 문제를 해결할 수 있지만 데이터를 누락시키게 된다.
 	* 다음과 같은 방법으로 rownum, 즉 N값, 을 제한할 수 있다.
 	```scala
@@ -64,8 +64,11 @@ Executor의 OutOfMemoryError 의 해결할 수 있는 방법을 소개한다.
 위에서 소개한 해결책들은 결국 Executor의 메모리를 늘리거나 하나의 Executor에 몰리는 데이터를 줄여주는 방법이다. **선택은 당신의 몫**
 
 
-## 상세 분석 Step
-1. Spark UI에서 실패한 Stage의 상세 페이지를 접근하여 Executor의 의도치 않은 종료를 확인한다.
+## Debugging Step
+
+다음은 Spark을 구동시키는 Parallel 환경에서 FileNotFoundException이 발상하였을 때 원인을 분석하는 Debugging Step이다. 
+
+1. Spark UI에서 실패한 Stage의 상세 페이지에 접근하여 Executor의 의도치 않은 종료를 확인한다.
 ![confirm-executor](/images/spark-oom-debugging/confirm-executor.png)
 2. Spark UI의 Executors 메뉴에서 종료된 Executor error log를 확인한다.
 ![confirm-log](/images/spark-oom-debugging/confirm-log.png)

@@ -10,7 +10,7 @@ author: Jae
 > 이 포스트의 내용은 개인적인 공부 목적으로 [Mastering Apache Spark 2](https://www.gitbook.com/book/jaceklaskowski/mastering-apache-spark/details) 정리한 것입니다.
 
 
-다은은 spark-shell에서 RDD를 생성하고, Transformation, Action 한 예제를 보여준다.
+다음은 spark-shell에서 RDD를 생성하고, Transformation, Action 한 예제를 보여준다.
 
 ```scala
 scala> val fruits = sc.parallelize(List("apple", "orange", "strawberry"))

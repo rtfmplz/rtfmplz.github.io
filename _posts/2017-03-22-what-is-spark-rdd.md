@@ -69,7 +69,7 @@ RDD를 구성하는 각 알파벳에대해서 자세히 알아보자
 > * RDD Records의 위치에 관한 정보
 > * Spark의 DAGScheduler는 작업을 가능한 한 데이터에 가깝게 배치하기 위해 컴퓨팅 파티션을 배치하는 데 사용한다.
 
-![distributed-and-partitioned-RDD](/images/what-is-spark-rdd/distributed-and-partitioned-RDD.png)
+![distributed-and-partitioned-RDD](/images/posts/what-is-spark-rdd/distributed-and-partitioned-RDD.png)
 
 
 #### 정리하면, RDD란.
@@ -85,7 +85,7 @@ RDD를 구성하는 각 알파벳에대해서 자세히 알아보자
 * 이렇게 기록된 RDD Lineage 와 Immutable 하다는 특성을 이용해서 데이터가 유실되면 언제든 다시 만들어낼 수 있는것이다.
 
 > DAG(Directed Acyclic Graph | 비순환 방향 그래프): RDD와 Transformations의 관계(RDD Lineage)를 Graph로 표현
-> ![DAG](/images/what-is-spark-rdd/DAG.png)
+> ![DAG](/images/posts/what-is-spark-rdd/DAG.png)
 
 
 

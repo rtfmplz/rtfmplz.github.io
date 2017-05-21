@@ -30,7 +30,7 @@ res1: String = orangeapple
 
 아래 그림에서처럼 RDD의 Action은 RDD가 Job이 되는 트리거가 된다.
 
-![RDD-to-Job](/images/what-is-job-stage-task-in-spark/RDD-to-Job.png)
+![RDD-to-Job](/images/posts/what-is-job-stage-task-in-spark/RDD-to-Job.png)
 
 결국 Job이란 Partition으로 구성된 RDD로부터 (일련의 Transformation을 적용한 후) Action의 결과를 얻어내기 위해 DAGScheduler에 넘겨진 Action Item이다.
 
@@ -46,7 +46,7 @@ Job은 Action의 결과를 얻기위해서 RDD에 Transformation들을 적용하
 >
 > DAGScheduler 는 logical execution plan (i.e. RDD lineage of dependencies built using RDD transformations) 을 physical execution plan (using stages)으로 변환한다.
 >
-> ![dagscheduler-rdd-lineage-stage-dag](/images/what-is-job-stage-task-in-spark/dagscheduler-rdd-lineage-stage-dag.png)
+> ![dagscheduler-rdd-lineage-stage-dag](/images/posts/what-is-job-stage-task-in-spark/dagscheduler-rdd-lineage-stage-dag.png)
 > DAGScheduler Transforming RDD Lineage Into Stage DAG
 
 
@@ -54,14 +54,14 @@ Job은 Action의 결과를 얻기위해서 RDD에 Transformation들을 적용하
 
 Stage가 나뉘어지는 기준은 shuffle dependencies에 의해서 정해진다. 즉, Shuffle을 발생시키는 join, repartition과 같은 연산이 Stage가 나뉘어지는 기준이 된다.
 
-![graph-of-stage](/images/what-is-job-stage-task-in-spark/graph-of-stage.png)
+![graph-of-stage](/images/posts/what-is-job-stage-task-in-spark/graph-of-stage.png)
 
 > 즉, Stage란 DAGSchedualr에 의해서 생성된 물리적 실행 계획의 단계(Step)들이다.
 > 하나의 Stage를 처리하기 위해서는 하나 이상의 Task가 필요하다.
 
 마지막으로 Task는 RDD의 각 파티션을 처리하기 위한 가장 작은 개별 실행 단위다. Spark는 각각의 파티션을 처리할 Task를 하나씩 만들고, 각각의 Task는 클러스터에 하나의 코어를 요청한다. 생성된 Task는 serialized되어, 각 worker노드의 executors로 분배된다.
 
-![spark-rdd-partitions-job-stage-tasks](/images/what-is-job-stage-task-in-spark/spark-rdd-partitions-job-stage-tasks.png)
+![spark-rdd-partitions-job-stage-tasks](/images/posts/what-is-job-stage-task-in-spark/spark-rdd-partitions-job-stage-tasks.png)
 
 > 즉, Task란 어떤 Stage 가 처리되기 위해서 계산되어야 하는 partition에 대한 작업으로 executor에 의해 처리된다.
 

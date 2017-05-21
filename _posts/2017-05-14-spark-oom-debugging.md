@@ -69,11 +69,11 @@ Executor의 OutOfMemoryError를 해결할 수 있는 방법을 소개한다.
 다음은 Spark을 구동시키는 Parallel 환경에서 FileNotFoundException이 발상하였을 때 원인을 분석하는 Debugging Step이다. 
 
 1. Spark UI에서 실패한 Stage의 상세 페이지에 접근하여 Executor의 의도치 않은 종료를 확인한다.
-![confirm-executor](/images/spark-oom-debugging/confirm-executor.png)
+![confirm-executor](/images/posts/spark-oom-debugging/confirm-executor.png)
 2. Spark UI의 Executors 메뉴에서 종료된 Executor error log를 확인한다.
-![confirm-log](/images/spark-oom-debugging/confirm-log.png)
+![confirm-log](/images/posts/spark-oom-debugging/confirm-log.png)
 3. 종합 로그 내용 중 stderr full log를 확인한다.
-![read-stderr](/images/spark-oom-debugging/read-stderr.png)
+![read-stderr](/images/posts/spark-oom-debugging/read-stderr.png)
 4. 로그의 마지막 부분부터 거슬러 올라가며 종료 원인을 확인한다.
 OutOfMemoryError(Array 사이즈 증가 실패)로 인해 종료 시그널 발생, 종료 훅이 호출되어 의도치 않은 비정상 종료 과정 중 FileNotFoundException이 발생하고 종료됨을 확인 할 수 있다.
-![stderr-full-log](/images/spark-oom-debugging/stderr-full-log.png)
+![stderr-full-log](/images/posts/spark-oom-debugging/stderr-full-log.png)

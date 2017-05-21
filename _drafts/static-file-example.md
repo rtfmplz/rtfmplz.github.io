@@ -6,4 +6,4 @@ category: test
 
 # This is test page for static data
 
-![jae](/images/private/jae.jpeg)
+![jae](/images/posts/private/jae.jpeg)

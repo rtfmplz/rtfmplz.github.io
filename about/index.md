@@ -2,7 +2,7 @@
 layout: default
 ---
 
-<img id="profile-img" src="../images/private/jae.jpeg" alt="jae" />
+<img id="profile-img" src="/images/private/jae.jpeg" alt="jae" />
 
 
 ### About me
@@ -28,7 +28,7 @@ layout: default
 
 ##### 좋아하는 것들
 * 남의 블로그 정리해서 Evernote에 저장하기 (앞으로 차차 정리해서 포스팅할 예정)
-* 인문학 책읽기 (개발 서적은 스터디 준비를 위해서만..)
+* 인문학 책읽기 (개발 서적도.......)
 * 맥주 마시면서 야구보기
 * 인터넷 쇼핑 :)
 

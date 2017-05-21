@@ -2,7 +2,7 @@
 layout: default
 ---
 
-<img id="profile-img" src="/images/private/jae.jpeg" alt="jae" />
+<img id="profile-img" src="../images/private/jae.jpeg" alt="jae" />
 
 
 ### About me
@@ -13,7 +13,11 @@ layout: default
 
 ##### 주로 쓰는 언어
 * Proficient: Scala, Python
-* Familiar: C (학부수준?????), Java (library 보기 위해 보는 정도?), JavaScript (blog 운영을 위한 정도?)
+* Familiar
+	* SQL: 업무 진행 및 DBA와 이야기 할 정도??
+	* Java: library 보는 정도???
+	* JavaScript: blog 운영을 위한 정도?
+	* C: 학부수준?????
 
 ##### 요즘 하는 일
 * Hadoop Cluster 고장내기
@@ -24,7 +28,7 @@ layout: default
 
 ##### 좋아하는 것들
 * 남의 블로그 정리해서 Evernote에 저장하기 (앞으로 차차 정리해서 포스팅할 예정)
-* 인문학 책읽기 (개발 서적은 필요할 때만..)
+* 인문학 책읽기 (개발 서적은 스터디 준비를 위해서만..)
 * 맥주 마시면서 야구보기
 * 인터넷 쇼핑 :)
 

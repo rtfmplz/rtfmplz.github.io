@@ -68,7 +68,7 @@ author: Jae
 
 ## 다시, Hadoop 실행!!
 
-![ambari](/images/hdfs-recovery-story/ambari.jpeg)
+![ambari](/images/posts/hdfs-recovery-story/ambari.jpeg)
 
 ## Under Replicated Block v.s. Missing Block
 
@@ -220,7 +220,7 @@ $hadoop fsck -delete	# 삭제
 * 2 Alerts 는 갑자기 작업량이 많아지면 생긴 alert 이니까 신경쓰지 말자..... ㅋㅋ
 * 극뽁, 얏호
 
-![recovery](/images/hdfs-recovery-story/recovery.jpeg)
+![recovery](/images/posts/hdfs-recovery-story/recovery.jpeg)
 
 ## 결론
 

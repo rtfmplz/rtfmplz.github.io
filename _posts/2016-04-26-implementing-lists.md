@@ -110,7 +110,7 @@ scala> val fruits = new Orange :: apples
 fruits : List[Fruit] = List(Orange@cd6798 , Apple@585fa9)
 ```
 
-![fruitList](/images/programming-in-scala/fruitList.png)
+![fruitList](/images/posts/programming-in-scala/fruitList.png)
 
 * 위와 같은 유연성이 가능한건 `::`의 구현이 아래와 같기 때문이다.
 

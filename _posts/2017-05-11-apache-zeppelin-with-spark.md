@@ -42,7 +42,7 @@ Zeppelin은 Spark 뿐만이 아닌 Livy, Cassandra, Lens, SQL 등등의 다른 �
 
 Zeppelin 에 접속하면 아래 그림처럼 오른쪽 상단에 user가 표시되고 클릭하면 drop list를 펼칠 수 있다.
 
-![drop-list](/images/apache-zeppelin-with-spark/drop-list.png)
+![drop-list](/images/posts/apache-zeppelin-with-spark/drop-list.png)
 
 Interpreter 매뉴를 선택하면 Interpreter를 추가하거나 삭제하고, 설정을 변경할 수 있는 페이지가 나온다.
 
@@ -50,7 +50,7 @@ Interpreter 매뉴를 선택하면 Interpreter를 추가하거나 삭제하고, 
 * Repository 버튼을 클릭하면 다음 그림처럼 현재 설정된 Repositories를 확인하거나 추가 할 수 있다.
 
 
-![repository](/images/apache-zeppelin-with-spark/repository.png)
+![repository](/images/posts/apache-zeppelin-with-spark/repository.png)
 
 뒤에서 Spark이 사용 할 Library를 추가 하는 방법을 소개할 텐데, Repository 설정이 제대로 되어있지 않으면 정상적으로 동작하지 않는다.
 
@@ -68,7 +68,7 @@ Zeppelin의 spark interpreter은, 후려치면, spark-shell(driver)과 같은 sp
 
 다음은 Ambari의 Zeppelin Notebook의 config 화면이다.
 
-![ambari-config](/images/apache-zeppelin-with-spark/ambari-config.png)
+![ambari-config](/images/posts/apache-zeppelin-with-spark/ambari-config.png)
 
 > Ambari config v.s. Spark interpreter config
 >
@@ -91,7 +91,7 @@ zeppelin   4704      1  0  5월08 ?      00:04:27 /usr/java/jdk1.8.0_102/bin/jav
 
 > Zeppelin은 ivy를 지원하지 않기 때문에 latest.integration 같은 ivy 문법은 사용할 수 없다.
 
-![dependencies](/images/apache-zeppelin-with-spark/dependencies.png)
+![dependencies](/images/posts/apache-zeppelin-with-spark/dependencies.png)
 
 > Interpreter의 설정을 변경하는 경우 Spark Interpreter를 restart 해주어야 한다.  
 > Interpreter를 재시작 하면 위에서 살펴본 `ZeppelinServer` 가 dependencies에 명시된 library를 물고 새로 시작된다.
@@ -114,7 +114,7 @@ z.load("groupId:artifactId:version or local file path")
 #### Data visualization
 spark SQL을 통해서 얻은 결과 (다른 언어들도 가능하다고 함)를 시각화 할 수 있다.
 
-![visualization](/images/apache-zeppelin-with-spark/visualization.png)
+![visualization](/images/posts/apache-zeppelin-with-spark/visualization.png)
 
 시각화에서 끝나지 않고 코드를 가려주는 Report 뷰 모드와 Scheduler를 사용하면 Dashboard를 빠르게 만들 수 있다.
 
@@ -125,7 +125,7 @@ spark SQL을 통해서 얻은 결과 (다른 언어들도 가능하다고 함)�
 입력 형태를 동적으로 생성할 수 있다.
 * 특정 달, 일의 데이터를 보고자 할 때 유용하다.
 
-![dynamicform](/images/apache-zeppelin-with-spark/dynamicform.png)
+![dynamicform](/images/posts/apache-zeppelin-with-spark/dynamicform.png)
 
 ## Troubleshooting
 

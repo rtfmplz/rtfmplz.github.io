@@ -47,7 +47,7 @@ clientPort=2181
 	* `% echo ruok | nc localhost 2181`
 
 * four-letter-words
-![fourLetterWords](/images/hadoop-the-definitive-guide/fourLetterWords.png)
+![fourLetterWords](/images/posts/hadoop-the-definitive-guide/fourLetterWords.png)
 
 
 ## 예제
@@ -201,7 +201,7 @@ $ zkCli.sh localhost ls /zoo
 
 ### 연산
 * 주키퍼 서비스의 9개의 **기본** 연산
-![Operation](/images/hadoop-the-definitive-guide/Operation.png)
+![Operation](/images/posts/hadoop-the-definitive-guide/Operation.png)
 
 * update 류 연산은 버전 숫자가 일치해야 수행됨
 	* delete, setData 연산은 업데이트 될 znode의 버전 숫자를 지정해야 한다.
@@ -345,7 +345,7 @@ $ zkCli.sh localhost ls /zoo
 * 클라이언트는 `Watcher` 객체를 등록함으로써 상태 변화에 대한 통지를 받을 수 있다.
 
 
-![zookeeperStatus](/images/hadoop-the-definitive-guide/zookeeperStatus.png)
+![zookeeperStatus](/images/posts/hadoop-the-definitive-guide/zookeeperStatus.png)
 
 > NOTE. Watcher의 두가지 역할
 

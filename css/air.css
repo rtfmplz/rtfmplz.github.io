@@ -173,6 +173,7 @@ pre {
   padding: 1rem;
   text-align: left;
   color: #c1b0b0;
+  white-space: pre-wrap;
 }
 
 blockquote {

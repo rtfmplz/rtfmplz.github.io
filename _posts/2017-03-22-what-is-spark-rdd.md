@@ -3,6 +3,7 @@ layout: default
 title: What is Spark RDD
 category: post
 author: Jae
+comments: true
 ---
 
 # What is Spark RDD

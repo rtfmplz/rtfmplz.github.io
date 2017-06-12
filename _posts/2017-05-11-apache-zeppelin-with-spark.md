@@ -3,6 +3,7 @@ layout: default
 title: Apache zeppelin with Spark
 category: post
 author: Jae
+comments: true
 ---
 
 # Apache zeppelin with Spark

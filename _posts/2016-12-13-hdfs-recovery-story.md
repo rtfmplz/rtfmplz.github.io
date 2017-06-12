@@ -3,6 +3,7 @@ layout: default
 title: DataNode의 H/W 스펙이 다른 Hadoop 클러스터 운영 경험기
 category: post
 author: Jae
+comments: true
 ---
 
 # DataNode의 H/W 스펙이 다른 Hadoop 클러스터 운영 경험기

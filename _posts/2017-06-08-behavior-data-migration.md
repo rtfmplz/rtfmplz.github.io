@@ -3,6 +3,7 @@ layout: default
 title: JAE's journey migrating 1TB of RDBMS data to Hadoop using SPARK
 category: post
 author: Jae
+comments: true
 ---
 
 # JAE's journey migrating 1TB of RDBMS data to Hadoop using SPARK

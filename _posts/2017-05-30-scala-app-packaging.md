@@ -3,6 +3,7 @@ layout: default
 title: Scala App Packaging in SBT
 category: post
 author: Jae
+comments: true
 ---
 
 # Scala App Packaging in SBT

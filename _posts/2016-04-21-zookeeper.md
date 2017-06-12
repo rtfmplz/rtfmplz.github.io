@@ -3,6 +3,7 @@ layout: default
 title: Zookeeper
 category: post
 author: Jae
+comments: true
 ---
 
 > Hadoop 완벽가이드 3판 을 개인적인 공부 목적으로 정리한 포스트 입니다.

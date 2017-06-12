@@ -3,6 +3,7 @@ layout: default
 title: 익스트랙터 in Scala
 category: post
 author: Jae
+comments: true
 ---
 
 > Programming in Scala by Martin Odersky 를 개인적인 공부 목적으로 정리한 포스트 입니다.

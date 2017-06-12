@@ -3,6 +3,7 @@ layout: default
 title: Spark Logging 정리
 category: post
 author: Jae
+comments: true
 ---
 
 # Spark Logging 정리

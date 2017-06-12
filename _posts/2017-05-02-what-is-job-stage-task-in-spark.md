@@ -3,6 +3,7 @@ layout: default
 title: What is job, stage, task in spark
 category: post
 author: Jae
+comments: true
 ---
 
 # JOB, STAGE, TASK in SPARK

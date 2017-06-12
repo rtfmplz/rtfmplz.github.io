@@ -3,6 +3,7 @@ layout: default
 title: 객체를 사용한 모듈화 프로그래밍
 category: post
 author: Jae
+comments: true
 ---
 
 > Programming in Scala by Martin Odersky 를 개인적인 공부 목적으로 정리한 포스트 입니다.

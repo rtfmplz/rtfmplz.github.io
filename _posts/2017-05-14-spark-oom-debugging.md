@@ -3,6 +3,7 @@ layout: default
 title: Spark의 OutOfMemoryError 분석
 category: post
 author: Jae
+comments: true
 ---
 
 # Spark의 OutOfMemoryError 분석

@@ -12,7 +12,7 @@ comments: true
 > 내용이 다소 부족할 수 있으므로 심화된 내용을 얻고 싶다면, References에 언급된 문서들을 참고한다.
 >
 > * 러닝 스파크 chaper 10. 스파크 스트리밍
-> * [Spark Streaming Programming Guide](https://spark.apache.org/docs/latest/streaming-programming-buide.html)
+> * [Spark Streaming Programming Guide](https://spark.apache.org/docs/latest/streaming-programming-guide.html)
 
 
 ## Keyword
@@ -33,7 +33,7 @@ Spark Streaming은 Kafka, Flume, Kinesis, TCP등 다양한 경로의 Data Source
 
 ## A Quick Example
 
-[Spark Streaming Programming Guide](https://spark.apache.org/docs/latest/streaming-programming-buide.html)에 소개된 간단한 예제를 소개한다.
+[Spark Streaming Programming Guide](https://spark.apache.org/docs/latest/streaming-programming-guide.html)에 소개된 간단한 예제를 소개한다.
 
 Spark Streaming은 Dependency를 추가함으로써 간단하게 사용할 수 있다. 다음은 SBT를 이용하는 경우이다.
 

@@ -234,5 +234,6 @@
 
 
 ## Overview of Application Flow
-* Application은 SDK를 포함하고 사용자는 Application을 이용해서 원장에 데이터를 읽고 쓰고
-* Application은 invoke, query만 할 수 있어
+
+* Application은 SDK를 포함하고 사용자는 Application을 이용해서 원장에 데이터를 읽고 쓰는 역할을 수행
+* Application은 원칙적으로 SmartContract를 통해서 원장에 invoke, query 만을 통해서 원장에 접근

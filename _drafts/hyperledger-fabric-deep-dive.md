@@ -59,9 +59,9 @@
 ### v0.6 Architecture
 
 ![fabric-0.6](../images/posts/hyperledger-fabric-deep-dive/fabric-0.6.png)
-
+
 * PBFT를 사용, 노드가 최소 4대이고 그중에 3대만 만족하면 데이터가 저장되는 구조
-* Peer가 체인코드 실행, leader 관리, 합의 까지 모든것을 전담
+* Peer가 체인코드 실행, leader 관리, 합의 까지 모든 것을 전담
 * Membership 공인인증서를 발행하지만, 없어도 문제 없었음
 * 클라이언트 입장에서 membership service가 있으면 enroll, 인증서 받기
 * 인증서와 Transaction을 실어서 SmartContract를 실행
@@ -85,10 +85,21 @@
     7. Orderer가 commiter에게 block을 deliver (batch)
     8. commiter는 validation후 block을 append
 
+
+## Components
+
 ### Orderer
+* Transaction을 정렬하는 역할
 * Genesis of a network
-    * Fabric network 구성시 orderer를 제일 먼저 올리고, orderer에서 채널 생성
+    * Orderer를 통해 채널 생성을 하는것이 Fabric Network의 시작
 	* 모든 Configuration 트랜잭션을 처리하여 네트워크 정책 (독자, 작성자, 관리자)을 설정
+* Orderer를 Kafaka로 운영할 경우 Orderer라고 하면..
+    * Kafka 는 3개 이상, Zookeeper도 3개, Order service가 별도의 Container로써 kafka마다 하나씩 붙어야 하므로 최소 9개 Container가 뜬다.
+    * HA를 요구하는 Production 환경에서 Kafka Broker는 보통 9개이상을 권장
+    * Zookeeper는 5개 (너무 많으면 Network 부하가 많아져서 좋지 않음)
+    * 여러 기업이 운영하는 Blockchain 환경이라면 Orderer는 어디에..?
+        * Cloud
+        * peer는 원장을 저장하니까 사내에
 
 ### Peer
 * Endorser
@@ -96,7 +107,7 @@
 * Commiter
 	* Transaction의 결과를 검증
 * Endorser 와 commiter는 하나의 컨테이너이고, 컨테이너가 실행될 때 configuration으로 endorser 역할을 할지 말지 지정하게 되어 있음
-* Event를 발행
+* Event 발행
 	* After execute chaincode
 	* After append block
 * Gossip Network (Protocol)
@@ -104,7 +115,7 @@
 ### Ledger
 * Key-value store
 * Default level DB
-* Couch DB로 바꿔서 config 가능
+* External로 Couch DB를 사용할 수 있음
 * RDB도 지원 예정
 * Couch DB를 쓰는 이유
     * 기존의 key-value db로는 조회용 데이터를 만들기 쉽지 않음
@@ -130,7 +141,7 @@
 
 ### MSP(membership service provider)
 * 조직을 나누는 기술
-* Fabric ca - identity의 역할을 함
+* Identity의 역할
     * 인증서 발급
     * 사용자 등록
     * peer간 통신시 peer validation check 
@@ -142,98 +153,116 @@
     * user
     * peer
     * Orderer
-* 구현체는 Fabric CA를 쓸 수도 있지만, 우리 조직의 CA를 쓸 수도 있다.
+* 구현체는 Fabric CA를 쓸 수도 있지만, 우리 조직의 CA를 쓸 수 있음
 
 ### Fabric-CA
-* 사용자가 한 명 등록되면 Ecert (Enrollment Certificate) 를 하나 발급
-* Client는 transaction을 하나 생성할 때마다 Ecert 에서 특정 데이터를 추출해서 TCert(Transaction Certification)을 생성
-* Transaction 마다 isolation 하는 역할
+* MSP interface의 기본 구현체
+* Ecert, Tcert를 발행
+	* 사용자가 한 명 등록되면 Ecert (Enrollment Certificate) 를 하나 발급
+	* Client는 transaction을 하나 생성할 때마다 Ecert 에서 특정 데이터를 추출해서 TCert(Transaction Certification)을 생성
+	* Transaction 마다 isolation 하는 역할
 * Ecert를 가지고 내용을 조회할 수 있다.
 
 ### Crypto Service Provider
-* PKI 인증서를 만들어 주는 구현체를 내맘대로 바꿀 수 있음
+* PKI 인증서를 만들어 주는 구현체
+* Fabric-CA 가 사용하는 모듈
+* 기본 구현체가 아닌 다른 것을 가져다 쓸 수 있다.
 
 
----
+## Fabric Network
 
-## Bootstrapping a Network
+### Bootstrapping a Network
 * Orderer가 제일 처음 뜸
-* 현재는 Orderer == Kafka라고 보면 됨
-    * Kafka 는 3개 이상, Zookeeper도 3개, Order service가 kafka마다 하나씩 붙어야 하므로 최소 9개 process가 뜬다.
-    * HA를 유지해야 하는 환경에서는 Kafka Broker는 9개는 써야 함
-    * Zookeeper는 5개 (너무 많으면 부하가 많아져서 안좋아)
-    * 여러 기업이 운영하는 Blockchain 환경이라면 Orderer어디에 두어야 좋지?
-        * Cloud
-        * peer는 원장을 저장하니까 사내에 두고
+* Orderer가 control 할 member들을 결정
+* Network에 참여할 Peer 의 수 결정
+* 아직 Peer는 Orderer 또는 다른 Peer들과 연결되지는 않음
 
-
-## Setting up Channels, Policies, and Chaincodes
+### Setting up Channels, Policies, and Chaincodes
 * Orderer가 올라왔으면 Orderer가 Channel을 생성
 * 이후 Peer 가 Orderer에 채널에 join 요청
 * 다음으로 Channel에 chaincode를 deploy
-* Chaincode를 instanciate할 때 Endorsement policy를 argument 로 지정하게 되어 있음
+* Chaincode를 instanciate할 때 Endorsement policy를 argument 로 배포
 
-
-## Consensus redefined
+### Consensus redefined
 * Consensus = Transaction endorsement + ordering + validation
-* Endorsement: 참여 회사들이 Transaction 을 처리 할꺼야 말꺼야를 알려줌
+* Transaction endorsement: 참여자 들이 Transaction 을 처리하는 기준
 * Ordering: 처리해야 하는 Transaction 들을 시간순서대로 채널별 Chaincode 별로 정렬
-* Validation: endorsement 를 만족하는지, ordering 되어 있는지, chaincode 내용이 맞는지 등등 검증
+* Validation: endorsement를 만족하는지, ordering 되어 있는지, chaincode 내용이 맞는지 등등 검증
 
 
-## Transaction Endorsement
+### Transaction Endorsement
 
-* 보증은 트랜잭션 실행 결과의 서명 된 응답입니다
-* 보증 정책은 명시 적 또는 묵시적으로 이해 관계자가 수락 할 거래에 대한 요구 사항을 요약합니다.
-* 보증 정책은 채널의 체인 코드 인스턴스화 중에 지정됩니다. 각 채널 체인 코드는 다른 보증 정책을 가질 수 있습니다.
-
-
-## Nodes and Roles
-
-* Committing Peer
-* Endorsing Peer
-* Ordering Nodes (service)
+* Endorsement는 Transaction이 Endorser에 실행된 후 문제가 없음을 서명한 결과
+* Endorsement policy는 참여자들에 의해서 받아들여져야 하는 Transaction의 요구사항
+* Endorsement policy는 채널의 체인 코드 인스턴스화 중에 지정
+* 각각의 채널 별 체인 코드는 다른 Endorsement policy를 가질 수 있음
 
 
 ## Sample Transaction: step 1/7
+
 ### Step 1/7 - Propose transaction
+
+> 아래 소개된 Fabric Network에서 Endorsement policy(Ap)는 chaincode A를 instantiate 할 때 배포되었다고 가정한다.
+
 ![transation-step-1](../images/posts/hyperledger-fabric-deep-dive/transation-step-1.png)
+
+* Application propose transaction
+	* Client application submits a transaction proposal for chaincode A. It must target therequiredpeers{E0, E1, E2}
 
 ### Step 2/7 - Execute proposal
 ![transation-step-2](../images/posts/hyperledger-fabric-deep-dive/transation-step-2.png)
 
+* Endorsers Execute Proposals
+	* E0, E1, E2는 각각 proposed transaction을 실행
+	* 이때 원장에 update는 일어나지 않음
+	* 각각의 실행은 원장으로부터 Read set을 transaction의 실행으로부터 write set 을 생성
+
 ### Step 3/7 - Proposal response
 ![transation-step-3](../images/posts/hyperledger-fabric-deep-dive/transation-step-3.png)
+
+* Application receives responses
+	* endorser는 RWSet에 서명을 한 후, Application에 반환
 
 ### Step 4/7 - Order transaction
 ![transation-step-4](../images/posts/hyperledger-fabric-deep-dive/transation-step-4.png)
 
+* Application submits responses for ordering
+	* 모든 endorser로 response를 받은 Application은 해당 response를 orderer에게 transaction으로 제출
+	* 이 때, 다른 응용 프로그램에서 제출 한 트랜잭션과 병렬 처리됨
+
 ### Step 5/7 - Deliver transaction
 ![transation-step-5](../images/posts/hyperledger-fabric-deep-dive/transation-step-5.png)
+
+* Orderer delivers to all committing peers
+	* Orderer는 Transaction을 블록으로 만들어서 모든 peer에게 배포
+	* Peer는 gossip protocol을 상용하여 다른 peer 에게 전파
 
 ### Step 6/7 - Validate Transaction
 ![transation-step-6](../images/posts/hyperledger-fabric-deep-dive/transation-step-6.png)
 
+* Committing peers validate transactions
+	* Committing peer 들은 Transaction을 endorsement policy에 대해서 검증하고, RWset이 유효한지 확인.
+	* 검증이 완료되면 Transaction은 원장에 쓰여지고, WorldState를 upate
+
 ### Step 7/7 - Notify Transaction
 ![transation-step-7](../images/posts/hyperledger-fabric-deep-dive/transation-step-7.png)
 
+* Committing peers notify applications
+	* Application은 Transaction의 실행의 성공/실패와 Block이 원장에 추가 될 때 event를 받도록 할 수 있다.
 
 
 ## Single Channel Network
 
 ![single-channel-network](../images/posts/hyperledger-fabric-deep-dive/single-channel-network.png)
 
-* 0.6의 PBFT 와 같아
+* 0.6의 PBFT 와 비슷
+* 모든 Peer들은 같은 채널로 연결되어 있음
+* 모든 Peer는 같은 chaincode를 가지고, 같은 원장을 유지함
 
 
 ## Multi-Channel Network
 
 ![multi-channel-network](../images/posts/hyperledger-fabric-deep-dive/multi-channel-network.png)
 
-* 클라이언트는 채널 명과 Chaincode 명을 실어서 Transaction을 시작
-
-
-## Overview of Application Flow
-
-* Application은 SDK를 포함하고 사용자는 Application을 이용해서 원장에 데이터를 읽고 쓰는 역할을 수행
-* Application은 원칙적으로 SmartContract를 통해서 원장에 invoke, query 만을 통해서 원장에 접근
+* Peer 들은 여러 채널을 통해 복수의 원장을 가질 수 있음
+* 클라이언트는 채널 명과 Chaincode 명을 실어서 Transaction을 제출

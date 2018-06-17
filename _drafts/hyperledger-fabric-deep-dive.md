@@ -49,10 +49,21 @@
 
 ### v0.6 Architecture
 
+### Overview of v1.0 Design Goals
+
+* 비지니스 프로세스를 반영하기 쉽도록 개선
+	* ACL
+	* Endorsement
+	* Channel
+	* Modular
+* Support rich data query of the ledger (Couch DB)
+* network와 chaincode를 동적으로 upgarde 할 수 있음
+* 기타 등등...
+
 ![fabric-0.6](../images/posts/hyperledger-fabric-deep-dive/fabric-0.6.png)
 
 * PBFT를 사용, 노드가 최소 4대이고 그중에 3대만 만족하면 데이터가 저장되는 구조
-* Peer가 체인코드 실행, leader 관리, 합의 까지 모든 것을 전담
+* Peer가 체인코드 실행, leader 관리, 합의까지 모든 것을 전담
 * Membership 공인인증서를 발행하지만, 없어도 문제 없었음
 * Application은 membership service를 통해서 network에 enroll
 * 인증서와 Chaincode를 포함한 Transaction을 Peer에 제출
@@ -61,8 +72,9 @@
 
 ![fabric-1.0](../images/posts/hyperledger-fabric-deep-dive/fabric-1.0.png)
 
-* 하나의 트랜잭션을 처리하는데 7단계를 거쳐야 함
-* Consensus의 확장, 7단계를 다 거치면 하나의 Consensus가 처리되는 구조
+* Peer의 역할을 분리
+	* 하나의 트랜잭션을 처리하는데 7단계를 거쳐야 함
+	* Consensus의 확장, 7단계를 다 거치면 하나의 Consensus가 처리되는 구조
 * 단계
     1. 클라이언트가 MSP에 enroll, 인증서 발급
     2. 인증서 정보, SmartContract Method와 Argument를 실어서 endorser에 transaction proposal
@@ -71,21 +83,25 @@
         * Execute chaincode
     4. 검증 완료 후 보증된 response를 반환
     5. 클라이언트가 모든 endorser들에게 검증을 받았다고 판단하면 Orderer에게 Transaction을 submit
-    6. Orderer는 채널, 체인코드 이름, 버전 별로 transaction을 분류 및 정렬 후 블록 생성
-    7. Orderer에 의해서 Commiter에게 block을 deliver (batch)
-    8. Commiter는 validation 후 block을 append
+    6. Orderer는 채널, 체인코드 이름, 버전 별로 transaction을 분류 및 정렬 후 블록 생성한 후, Commiter에게 block을 deliver (batch)
+    7. Commiter는 validation 후 block을 append
 		* Transaction을 endorsement policy에 대해서 검증하고, RWset이 유효한지 확인
 		* 검증 완료 후 원장에 Transaction이 쓰여지고 State Database에 update
+	8. Commiter는 원장의 내용이 정상적으로 update 되었음을 event를 통해서 Application에 전달
 
-### Overview of v1.0 Design Goals
-
-* 비지니스 프로세스를 반영하기 쉽도록 개선
-	* ACL
-	* Endorsement
-	* Channel
-	* Modular
-* network와 chaincode를 동적으로 upgarde 할 수 있음
-* 기타 등등...
+> **Consensus redefined**
+> 
+> * Consensus = Transaction endorsement + Ordering + Validation
+> * Transaction endorsement: 참여자들이 Transaction을 처리하는 기준
+> * Ordering: 채널 별 Chaincode 별 Transaction 들을 시간순서대로 정렬
+> * Validation: endorsement를 만족하는지, ordering 되어 있는지, chaincode 내용이 맞는지 등등 검증
+> 
+> **Transaction Endorsement**
+> 
+> * Endorsement는 Transaction이 Endorser에 실행 결과가 문제 없음을 서명한 결과물
+> * Endorsement policy는 참여자들에 의해서 받아들여져야 하는 Transaction의 요구사항
+> * Endorsement policy는 채널의 체인 코드 인스턴스화 중에 지정
+> * 각각의 채널 별 체인 코드는 다른 Endorsement policy를 가질 수 있음
 
 
 ## Components
@@ -157,24 +173,10 @@
 
 ### Setting up Channels, Policies, and Chaincodes
 
-* Orderer가 올라왔으면 Orderer가 Channel을 생성
-* 이후 Peer 가 Orderer에 채널에 join 요청
-* 다음으로 Channel에 chaincode를 deploy
+* Orderer가 올라왔으면 Orderer가 Channel을 생성 (Configuration Transaction을 사용)
+* Peer가 Orderer를 통해 Channel에 join 요청
+* Channel에 chaincode를 deploy (Peer에 Chaincode install)
 * Chaincode를 instanciate 할 때 Endorsement policy를 함께 배포
-
-### Consensus redefined
-
-* Consensus = Transaction endorsement + Ordering + Validation
-* Transaction endorsement: 참여자들이 Transaction을 처리하는 기준
-* Ordering: 채널 별 Chaincode 별 Transaction 들을 시간순서대로 정렬
-* Validation: endorsement를 만족하는지, ordering 되어 있는지, chaincode 내용이 맞는지 등등 검증
-
-### Transaction Endorsement
-
-* Endorsement는 Transaction이 Endorser에 실행 결과가 문제 없음을 서명한 결과물
-* Endorsement policy는 참여자들에 의해서 받아들여져야 하는 Transaction의 요구사항
-* Endorsement policy는 채널의 체인 코드 인스턴스화 중에 지정
-* 각각의 채널 별 체인 코드는 다른 Endorsement policy를 가질 수 있음
 
 
 ## Sample Transaction: step 1/7

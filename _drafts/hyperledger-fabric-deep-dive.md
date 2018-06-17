@@ -47,8 +47,6 @@
 
 ## Architecture
 
-### v0.6 Architecture
-
 ### Overview of v1.0 Design Goals
 
 * 비지니스 프로세스를 반영하기 쉽도록 개선
@@ -59,6 +57,8 @@
 * Support rich data query of the ledger (Couch DB)
 * network와 chaincode를 동적으로 upgarde 할 수 있음
 * 기타 등등...
+
+### v0.6 Architecture
 
 ![fabric-0.6](../images/posts/hyperledger-fabric-deep-dive/fabric-0.6.png)
 

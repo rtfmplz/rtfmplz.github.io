@@ -179,7 +179,7 @@
 * Chaincode를 instanciate 할 때 Endorsement policy를 함께 배포
 
 
-## Sample Transaction: step 1/7
+## Sample Transaction
 
 > 아래 소개된 Fabric Network에서 Endorsement policy(Ap)는 chaincode A를 instantiate 할 때 배포되었다고 가정
 > 

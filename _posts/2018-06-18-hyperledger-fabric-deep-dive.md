@@ -41,7 +41,7 @@ comments: true
 
 ## Reference Architecture
 
-![reference-architecture](../images/posts/hyperledger-fabric-deep-dive/reference-architecture.png)
+![reference-architecture](/images/posts/hyperledger-fabric-deep-dive/reference-architecture.png)
 
 * IDENTITY
 	* ACL
@@ -71,7 +71,7 @@ comments: true
 
 ### v0.6 Architecture
 
-![fabric-0.6](../images/posts/hyperledger-fabric-deep-dive/fabric-0.6.png)
+![fabric-0.6](/images/posts/hyperledger-fabric-deep-dive/fabric-0.6.png)
 
 * PBFT를 사용, 노드가 최소 4대이고 그중에 3대만 만족하면 데이터가 저장되는 구조
 * Peer가 체인코드 실행, leader 관리, 합의까지 모든 것을 전담
@@ -81,7 +81,7 @@ comments: true
 
 ### v1.0 Architecture
 
-![fabric-1.0](../images/posts/hyperledger-fabric-deep-dive/fabric-1.0.png)
+![fabric-1.0](/images/posts/hyperledger-fabric-deep-dive/fabric-1.0.png)
 
 * Peer의 역할을 분리
 	* 하나의 트랜잭션을 처리하는데 7단계를 거쳐야 함
@@ -198,14 +198,14 @@ comments: true
 
 ### Step 1/7 - Propose transaction
 
-![transation-step-1](../images/posts/hyperledger-fabric-deep-dive/transation-step-1.png)
+![transation-step-1](/images/posts/hyperledger-fabric-deep-dive/transation-step-1.png)
 
 * Application propose transaction
 	* Application이 Chaincode A에 대한 transaction을 생성하여 Endorsement Policy를 만족하기 위해서 {E0, E1, E2} 에 Transaction 제출
 
 ### Step 2/7 - Execute proposal
 
-![transation-step-2](../images/posts/hyperledger-fabric-deep-dive/transation-step-2.png)
+![transation-step-2](/images/posts/hyperledger-fabric-deep-dive/transation-step-2.png)
 
 * Endorsers Execute Proposals
 	* E0, E1, E2 각각은 제출된 Transaction을 실행
@@ -214,14 +214,14 @@ comments: true
 
 ### Step 3/7 - Proposal response
 
-![transation-step-3](../images/posts/hyperledger-fabric-deep-dive/transation-step-3.png)
+![transation-step-3](/images/posts/hyperledger-fabric-deep-dive/transation-step-3.png)
 
 * Application receives responses
 	* endorser는 RWSet에 서명을 한 후, Application에 반환
 
 ### Step 4/7 - Order transaction
 
-![transation-step-4](../images/posts/hyperledger-fabric-deep-dive/transation-step-4.png)
+![transation-step-4](/images/posts/hyperledger-fabric-deep-dive/transation-step-4.png)
 
 * Application submits responses for ordering
 	* 모든 endorser로 부터 sign된 response를 받았다면(Endorsement policy를 만족했다면), Application은 해당 response를 orderer에게 transaction으로 제출
@@ -229,7 +229,7 @@ comments: true
 
 ### Step 5/7 - Deliver transaction
 
-![transation-step-5](../images/posts/hyperledger-fabric-deep-dive/transation-step-5.png)
+![transation-step-5](/images/posts/hyperledger-fabric-deep-dive/transation-step-5.png)
 
 * Orderer delivers to all committing peers
 	* Orderer는 Application들로 부터 제출된 Transaction을 채널별, Chaincode별 분류 후 시간순서대로 정렬
@@ -238,7 +238,7 @@ comments: true
 
 ### Step 6/7 - Validate Transaction
 
-![transation-step-6](../images/posts/hyperledger-fabric-deep-dive/transation-step-6.png)
+![transation-step-6](/images/posts/hyperledger-fabric-deep-dive/transation-step-6.png)
 
 * Committing peers validate transactions
 	* Committing peer 들은 Transaction을 endorsement policy에 대해서 검증하고, RWset이 유효한지 확인.
@@ -246,7 +246,7 @@ comments: true
 
 ### Step 7/7 - Notify Transaction
 
-![transation-step-7](../images/posts/hyperledger-fabric-deep-dive/transation-step-7.png)
+![transation-step-7](/images/posts/hyperledger-fabric-deep-dive/transation-step-7.png)
 
 * Committing peers notify applications
 	* Application은 Peer로 부터 Chaincode 실행의 성공/실패와 원장의 update에 대한 event를 받아서 처리할 수 있다.
@@ -254,7 +254,7 @@ comments: true
 
 ## Single Channel Network
 
-![single-channel-network](../images/posts/hyperledger-fabric-deep-dive/single-channel-network.png)
+![single-channel-network](/images/posts/hyperledger-fabric-deep-dive/single-channel-network.png)
 
 * 0.6의 PBFT 와 비슷
 * 모든 Peer들은 같은 채널로 연결되어 있음
@@ -263,7 +263,7 @@ comments: true
 
 ## Multi-Channel Network
 
-![multi-channel-network](../images/posts/hyperledger-fabric-deep-dive/multi-channel-network.png)
+![multi-channel-network](/images/posts/hyperledger-fabric-deep-dive/multi-channel-network.png)
 
 * Peer 들은 여러 채널을 통해 복수의 원장을 가질 수 있음
 * 클라이언트는 채널 명과 Chaincode 명을 실어서 Transaction을 제출

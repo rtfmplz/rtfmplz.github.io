@@ -8,18 +8,22 @@ layout: default
 ### About me
 
 ##### 이경재 / Jae Lee
-* 역사학자가 되고싶었지만 전자통신공학을 전공하고 현재는 소프트웨어 개발한다고는하나 이것저것 시키는건 다하는 프로 야근러 ??
-* back-end developer using scala
+* 역사 학자가 되고싶었지만 전자통신공학을 전공하고 현재는 소프트웨어 개발을 한다고는하나 이것저것 시키는건 다하는 프로 야근러 ??
+* Back-end service developer using scala
+* Private Blockchain (Hyperledger Fabric) beginner
 
 ##### 주로 쓰는 언어
-* Proficient: Scala, Python
-* Familiar
-	* SQL: 업무 진행 및 DBA와 이야기 할 정도??
-	* Java: library 보는 정도???
-	* JavaScript: blog 운영을 위한 정도?
-	* C: 학부수준?????
+* **Scala, Java, Sql** for back-end service
+* **Go, Node.js** for Hyperledger Fabric 
+* **JavaScript** for blogging
+* **Shell Script, Python** for develop tools
+
 
 ##### 요즘 하는 일
+* Hyperledger Fabric Deep Dive
+* Private BlockChain Business Model 고민하다 한숨쉬기
+
+##### 했던 일 
 * Hadoop Cluster 고장내기
 * Zeppelin 죽이기
 * IDC 서버 사랑하기

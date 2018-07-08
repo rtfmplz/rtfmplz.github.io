@@ -30,8 +30,7 @@ comments: true
 
 ## The Problem
 
-### Page.4 인터넷에서는 자신을 증명하는것이 어렵다.
-
+### Page.4 디지털 신원은 인터넷에서 가장 오래되고 힘든 문제 중 하나입니다.
 * 확인 할 수 없으니, 신뢰할 수 없다.
 
 ![On the Internet, nobody knows you're a dog](/images/posts/self-sovereign/dog.png)
@@ -42,8 +41,7 @@ comments: true
     * 표준이 없다.
 
 
-### Page.5 디지털 증명서(Digital Credential)을 검증하기 위한 두가지 방법
-
+### Page.5 문제의 핵심은 digital credentials을 확인하는 표준 방법이 없다는 것입니다.
 * Physical document와 다르기 Digital Document는 위변조가 가능하다.
 * 디지털 증명서를 검증하기 위해서는 두가지 문제를 해결해야 한다.
     * First. 기계가 읽을 수 있도록 표준화된 포맷이 필요하다.
@@ -57,8 +55,7 @@ comments: true
             * Sign을 검증한 Verification key가 Issuer의 Public key라는 것을 어떻게 믿을 수 있지?
 
 
-### Page.6 첫 번째 문제에 대한 기존 해법: Digital Credential의 표준화
-
+### Page.6 W3C(World Wide Web Consortium)는 마침내 digital credentials을 표준화하고 있습니다.
 * 현재 Claims (Personal Data) 들은 3rd party에 의해서 verify 되고 이것들은 web 에서 표현(사용)하기 어렵다.
     * 모두 제각각
 * W3C의 Verifiable Claims Working Group 표준화를 진행중
@@ -73,8 +70,7 @@ Issuer   -     Owner      - Verifier
  CA      -    web site    - 나
 ```
 
-### Page.7 두 번째 문제에 대한 기존 해법: PKI
-
+### Page.7 그러나 이것은 두 번째 문제를 남깁니다: credential 발급자의 디지털 서명을 검증하는 방법을 표준화하는 것
 * 다음으로 Credential issuer(Digital Credential을 발행한 기관)의 디지털 서명을 확인하는 방법을 표준화 해야한다.
     * 네트워크를 통해서 Digital Credential을 발급 받거나, 검증을 위한 Issuer의 Public key를 전달하게 되면 언제나 위변조의 위험이 존재한다.
 * 이 문제를 해결하기 위해서 PKI(Public Key Infrastructure)를 이용할 수 있다.
@@ -100,8 +96,7 @@ Issuer   -     Owner      - Verifier
 
 ## The Solution
 
-### Page.9 CA는 쓰기 싫다. Blockchain으로 대체한다.
-
+### Page.9 블록 체인 기술로 마침내이 문제를 해결할 수 있습니다.
 * Public Blockchain을 Decentralized Root CA로 사용할 수 있다. (누구도 소유하지 않지만, 누구나 사용할 수 있다.)
 * 블록체인은 인간에 대한 신뢰를 수학에 대한 신뢰로 대체한다.
     * 각각의 트랜잭션은 원작자에 의해서 signed 되어져  있다.
@@ -112,15 +107,14 @@ Issuer   -     Owner      - Verifier
     * 따라서 연관된 Public key 혹은 다른 자신의 것 임을 증명하기 위한 암호화 키를 보관하기 위한 저장소로 사용할 수 있다.
 
 
-### Page.10 DID(address), DID Document(Verifiable Claims Storage), DID Method(SmartContract)
-
+### Page.10 사실, 블록 체인을 사용하면 모든 공개 키가 이제 자신의 주소를 가질 수 있습니다
 * 모든 Public key는 address를 가질 수 있다.
     * 이 address는 DID(Decentralized Identifier)라고 부른다.
     * DID는 Identity 소유자의 Private key를 통해서 통제되고, 검증할 수 있다.
 * DID는 등록기관이 필요하지 않은 전세계적으로 유일한 검증가능한 identifier이다.
-    * DID는 DID를 위한 public key, 소유자가 자신의 것이라고 밝히고 싶은 다른 개인적인 자격들, network address등을 포함하는 DID Document와 함께 블록체인에 저장된다. 
+    * DID(address)는 DID를 위한 public key, 소유자가 자신의 것이라고 밝히고 싶은 다른 개인적인 자격들, network address등을 포함하는 DID Document(Verifiable Claims Storage)와 함께 블록체인에 저장된다. 
     * 신원(Identity) 소유자는 private key로 DID Document를 컨트롤 한다.
-    * DID는 공개 표준이므로 어떤 블록체인이든 해당 블록 체인에서 DID를 등록(wirte) 및 해석(read) 할 수 있는 방법을 정의하는 DID method(SmartContract)를 정의할 수 있다.
+    * DID는 공개 표준이므로 어떤 블록체인이든 해당 블록 체인에서 DID Document(Verifiable Claims Storage)를 등록(wirte) 및 해석(read) 할 수 있는 방법을 정의하는 DID method(SmartContract)를 정의할 수 있다.
     * DID는 블록체인 안에서 전자 서명된 트랜잭션에 의해서 등록되어지기 때문에, DID를 등록, 추적, 관리하기 위한 어떤 중앙 기관도 필요하지 않다.
 * DID는 self-sovereign identity를 가능한게 한다. 그것은 소유권을 주장하고 싶은 것, 사람, 조직을 위한 일생 휴대용 디지털 신원이다.
     * DID는 DIgital Identity를 바꿨다.
@@ -129,8 +123,7 @@ Issuer   -     Owner      - Verifier
         * 인터넷에 접속된 모든 사람들은 Public key의 소유권을 증명함으로써, 그들의 Claim을 검증할 수 있게 한다.
 
 
-### Page.11 DID가 구현된 블록체인 위에서 누구나 digital signed credential을 발행할 수 있고 누구나 검증할 수 있다.
-
+### Page.11 DID에 대한 공용 블록 체인을 사용하면 누구나 디지털 서명 된 자격증 명을 발급 할 수 있으며 누구나 이를 확인 할 수 있습니다
 * DID를 위한 Public 블록체인과 함께, 누구나 digitally signed credential을 발행 할 수 있고, 누구나 그것을 검증할 수 있다.
     * 모든 DID에는 관련된 public-private key가 있기 때문에, DID를 가진 누구든 검증 가능한 클레임 및 기타 문서를 디지털 방식으로 발행하고 서명할 수 있다.
     * Verifier가 Issuer의 DID를 가지고 있는 한, 블록체인에서 Issuer의 public key를 찾는 것과 그 클레임의 서명을 검증하는것은 간단한 일이다.
@@ -139,9 +132,8 @@ Issuer   -     Owner      - Verifier
 
 ![pki-with-blockchain](/images/posts/self-sovereign/pki-with-blockchain.png)
 
-
 > **여기까지 내용을 정리하면,**
->
+> 
 > 1. 내 DID(Address)에 저장된 카드번호 (Digital Credential)은 내 것이다. (내 DID에 접근 할 수 있는 사람은 Private key를 가진 나 뿐이므로)
 > 2. 내 DID Document에 저장된 카드번호(Digital Credential)는 현대카드가 서명, 발행한 것이다. (블록체인 상에서 내 DID로 직접 전송할 수 있다.)
 > 3. 서명을 검증하기 위한 위변조 되지 않은 현대카드의 Public key를 어떻게 구할 수 있지?

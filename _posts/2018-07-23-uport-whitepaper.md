@@ -1,3 +1,11 @@
+---
+layout: default
+title: uPort
+category: post
+author: Jae
+comments: true
+---
+
 # UPORT: A PLATFORM FOR SELF-SOVEREIGN IDENTITY
 
 > 본 Post는 uport white-paper를 정리한 것입니다. 상세한 내용은 원문을 참조 부탁드립니다.

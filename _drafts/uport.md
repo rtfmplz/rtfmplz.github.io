@@ -34,7 +34,7 @@
 	* decentralized
 		* don't rely on centralized 3rd-parties
 * off-chain data sotres
-	* identity는 암호화되어 off-chain data sotre에 저장된다. (e.g. dorpbox, aws)
+	* identity는 암호화되어 off-chain data sotre에 저장된다. (e.g. dropbox, aws)
 
 ### Propose Use Cases
 

@@ -1,3 +1,11 @@
+---
+layout: default
+title: uPort
+category: post
+author: Jae
+comments: true
+---
+
 # UPORT: A PLATFORM FOR SELF-SOVEREIGN IDENTITY
 
 > 본 Post는 uport white-paper를 정리한 것입니다. 상세한 내용은 원문을 참조 부탁드립니다.
@@ -34,7 +42,7 @@
 	* decentralized
 		* don't rely on centralized 3rd-parties
 * off-chain data sotres
-	* identity는 암호화되어 off-chain data sotre에 저장된다. (e.g. dorpbox, aws)
+	* identity는 암호화되어 off-chain data sotre에 저장된다. (e.g. dropbox, aws)
 
 ### Propose Use Cases
 
@@ -76,7 +84,7 @@
 	* 사용자가 proxy contarct를 유지하면서 private key를 교체 할 수 있게 한다.
 	* uPort identifier 대신 자신의 private key에 대응하는 public key를 사용하는 경우(일반적인 경우), 개인 키가 저장되어있는 장치를 잃어 버리면 식별자를 제어 할 수 없다.
 
-![froxy-contarct-architecture](../images/posts/uport/froxy-contarct-architecture.png)
+![froxy-contarct-architecture](/images/posts/uport/froxy-contarct-architecture.png)
 
 * Controller contract
 	* contain main access control logic
@@ -84,7 +92,7 @@
 	* 대리인은 친구 및 가족과 같은 개인이거나 은행 및 신용 조합과 같은 기관 일 수 있다. 
 	* 대리인의 쿼럼은 사용자의 신원을 복구하고 새 장치에 연결할 수 있다.
 
-![account-recovery](../images/posts/uport/account-recovery.png)
+![account-recovery](/images/posts/uport/account-recovery.png)
 
 1. Controller Contract에 Recovery network가 저장되어 있다.
 2. 사용자가 새 폰을 산다.
@@ -93,7 +101,7 @@
 5. Controller Contract가 사용자의 public key를 update 한다.
 6. 사용자의 identity가 복구된다.
 
-![with-off-chain-storage](../images/posts/uport/with-off-chain-storage.png)
+![with-off-chain-storage](/images/posts/uport/with-off-chain-storage.png)
 
 * Registry Contract를 사용하여 uPort identifier와 external data structure를 hash로 연결
 	* hash는 Data Structure의 무결성을 보장

@@ -7,14 +7,14 @@ layout: default
 
 ## About me
 
-##### 이경재 / Jae Lee
+#### 이경재 / Jae Lee
 * 역사 학자가 되고싶었지만 전자통신공학을 전공하고 현재는 소프트웨어 개발을 한다고는하나 이것저것 시키는건 다하는 생계형 개발자
 * Back-end service developer using scala
 * Big Data engineer
 * Private Blockchain beginner
 * Self-Sovereign beginner
 
-##### 주로 쓰는 언어
+#### 주로 쓰는 언어
 * **Scala, Java, Sql** for back-end service
 * **Python** for hobby
 * **Shell Script** for tools
@@ -23,12 +23,11 @@ layout: default
 * **English** for read the doc
 * **Korean** for kakaotalk
 
-##### 요즘 하는 일
-* Ethereum을 이용한 Self-Sovereign 기술 검토
+#### 요즘 하는 일
+* Ethereum을 기반으로 한 Self-Sovereign POC 기획 및 기술 검토 (개발하고싶다...)
 * Self-Sovereign의 금융권 도입을 위해서 윗사람 설득용 소설 쓰기
-* Self-Sovereign POC 기획하기 (개발하고싶다...)
 
-##### 했던 일 
+#### 했던 일 
 * Hadoop Cluster 구축 (for staging)
 * Zeppelin 서버 죽이기
 * IDC 서버 재부팅하기
@@ -37,8 +36,9 @@ layout: default
 * Private BlockChain Business Model 고민하다 한숨쉬기
 * Blockchain POC 유지보수 및 전사 오픈 저지하기
 
-##### 좋아하는 것
+#### 좋아하는 것
 * 관심 분야 바꿔가며 새로운것 공부하기
+* 멀쩡한 책 Chapter 별로 찢어서 보기
 * 남의 블로그 정리해서 Evernote에 저장하기 (앞으로 차차 정리해서 포스팅할 예정)
 * 인문학 책읽기 (개발 서적도.......)
 * 맥주 마시면서 야구보기

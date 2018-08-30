@@ -8,29 +8,34 @@ layout: default
 ### About me
 
 ##### 이경재 / Jae Lee
-* 역사 학자가 되고싶었지만 전자통신공학을 전공하고 현재는 소프트웨어 개발을 한다고는하나 이것저것 시키는건 다하는 프로 야근러 ??
+* 역사 학자가 되고싶었지만 전자통신공학을 전공하고 현재는 소프트웨어 개발을 한다고는하나 이것저것 시키는건 다하는 생계형 개발자
 * Back-end service developer using scala
-* Private Blockchain (Hyperledger Fabric) beginner
+* Big Data Engineer
+* Private Blockchain beginner
+* Self-Sovereign beginner
 
 ##### 주로 쓰는 언어
 * **Scala, Java, Sql** for back-end service
-* **Go, Node.js** for Hyperledger Fabric 
-* **JavaScript** for blogging
-* **Shell Script, Python** for develop tools
-
+* **Go, Node.js** for Blockchain (beginner)
+* **JavaScript** for blogging (beginner)
+* **Shell Script, Python** for tools
+* **English** for read the doc
+* **Korean** for communication
 
 ##### 요즘 하는 일
-* Hyperledger Fabric Deep Dive
-* Private BlockChain Business Model 고민하다 한숨쉬기
+* Ethereum을 이용한 Self-Sovereign 기술 검토
+* Self-Sovereign의 금융권 도입을 위해서 윗사람 설득용 소설 쓰기
 
 ##### 했던 일 
 * Hadoop Cluster 고장내기
 * Zeppelin 죽이기
 * IDC 서버 사랑하기
-* 머리 쥐어 뜯기 :)
-* Spark을 사용해서 RDBMS 데이터 Migration 하기
+* Spark을 사용해서 RDBMS 데이터 Migration & Integration 하기
+* Hyperledger Fabric Deep Dive
+* Private BlockChain Business Model 고민하다 한숨쉬기
 
-##### 좋아하는 것들
+##### 좋아하는 것
+* 관심 분야 바꿔가며 새로운것 공부하기
 * 남의 블로그 정리해서 Evernote에 저장하기 (앞으로 차차 정리해서 포스팅할 예정)
 * 인문학 책읽기 (개발 서적도.......)
 * 맥주 마시면서 야구보기

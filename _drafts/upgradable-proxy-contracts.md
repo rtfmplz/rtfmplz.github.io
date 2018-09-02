@@ -1,6 +1,6 @@
 # The Basics of Upgradable Proxy Contracts in Ethereum
 
-> 아래 글을 개인적인 공부 목적으로 번역한 글입니다. 문제시 삭제될 수 있습니다.
+> 아래 글을 개인적인 공부 목적으로 번역한 글입니다. 문제 시 삭제될 수 있습니다.
 >
 > * https://medium.com/@blockchain101/the-basics-of-upgradable-proxy-contracts-in-ethereum-479b5d3363d6
 

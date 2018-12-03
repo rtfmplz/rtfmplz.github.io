@@ -53,7 +53,7 @@ layout: default
 * 잘못된 내용이 있다면 댓글 부탁드립니다. 
 
 
-## #Contact
+## Contact
 <ul class="about">
     <li> <span> email </span> &raquo; <a href="mailto:{{ site.author.email }}" style="text-decoration:none"> {{ site.author.email }} </a> </li>
     <li> <span> pages </span> &raquo; <a href="http://{{ site.author.pages }}" style="text-decoration:none"> {{ site.author.pages }} </a> </li>

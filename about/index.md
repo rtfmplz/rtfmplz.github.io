@@ -45,12 +45,15 @@ layout: default
 * 인터넷 쇼핑 :)
 
 ## About this site
-* 개인적으로 관심있는 분야를 공부하면서 정리한 글들을 공유하기위한 목적으로 개설한 블로그 입니다.
+* 개인적으로 관심있는 분야를 공부하면서 정리하고 포트폴리오로 활용 할 목적으로 개설한 블로그 입니다.
 * 모든 Post는 직접 작성한 것이지만, 책이나 다른 블로그 등을 참고 하였습니다.
-* 참고한 책이나 블로그는 각 포스트에 명시하였지만 저작권 문제가 있으면 삭제될 수 있습니다.
+* 참고한 책이나 블로그는 각 포스트에 명시하였습니다.
+* 하지만, 개인적인 공부 및 포트폴리오 용도이기 때문에 출처에 대한 표시가 다소 부족할 수 있습니다.
+* 따라서 출처가 문제가되는 경우 삭제 될 수 있으며, 잘못되거나 부족한 내용들이 있을 수 있습니다.
+* 잘못된 내용이 있다면 댓글 부탁드립니다. 
 
 
-## Contact
+## #Contact
 <ul class="about">
     <li> <span> email </span> &raquo; <a href="mailto:{{ site.author.email }}" style="text-decoration:none"> {{ site.author.email }} </a> </li>
     <li> <span> pages </span> &raquo; <a href="http://{{ site.author.pages }}" style="text-decoration:none"> {{ site.author.pages }} </a> </li>

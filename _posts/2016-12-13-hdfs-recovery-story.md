@@ -93,7 +93,7 @@ comments: true
 
 > 나중에 알았지만 기다리면 Hadoop 이 알아서 처리해준다.. ^^..
 
-```bash
+```scala
 $ su - <$hdfs_user>
 $ hdfs fsck / | grep 'Under replicated' | awk -F':' '{print $1}' >> /tmp/under_replicated_files
 $ for hdfsfile in `cat /tmp/under_replicated_files`; do echo "Fixing $hdfsfile :" ;  hadoop fs -setrep 3 $hdfsfile; done
@@ -107,7 +107,7 @@ $ for hdfsfile in `cat /tmp/under_replicated_files`; do echo "Fixing $hdfsfile :
 * 뭔줄 알고 다시 생성하지??
 	* 아래 command로 검색할 수 있다.
 
-```bash
+```scala
 $ hadoop fsck -list-corruptfileblocks
 
 blk_1073741825  /hdp/apps/2.5.0.0-1245/mapreduce/mapreduce.tar.gz
@@ -130,11 +130,11 @@ blk_1074638542  /data/mover/file/0720000000_0722000000/part-00165
 	* Missing Block과 Normal Block의 내용을 비교해 보자.
 	* Average block replication 항목을 보면  Missing Block 은 0 이다........ OTL......
 
-```bash
+```scala
 $ hdfs fsck <HDFS 경로> -files -blocks -locations
 ```
 
-```bash
+```scala
 # Log For Missing Block
 
 $ hdfs fsck /data/mover/dnadb/file/0202000000_0203000000/_common_metadata -files -blocks -locations
@@ -175,7 +175,7 @@ FSCK ended at Tue Dec 13 11:25:20 KST 2016 in 1 milliseconds
 The filesystem under path '/data/mover/dnadb/file/0202000000_0203000000/_common_metadata' is CORRUPT
 ```
 
-```bash
+```scala
 # Log For Normal Block
 
 $ hdfs fsck /data/mover/dnadb/file/0203000000_0204000000/_common_metadata -files -blocks -locations
@@ -208,7 +208,7 @@ The filesystem under path '/data/mover/dnadb/file/0203000000_0204000000/_common_
 
 * Missing Block은 더이상 사용할 수 없기 때문에 아래 Command를 이용해서 `hdfs://lost+found`로 옮기거나 삭제 할 수 있다.
 
-```bash
+```scala
 $hadoop fsck -move		# /lost+found 로 이동
 $hadoop fsck -delete	# 삭제
 ```

@@ -260,7 +260,7 @@ Hello, world!
 이렇게 만들어진 Spark Application을 실행하면 `spark-submit`을 통해서 실행되지 않기 때문에 log4j.properties 파일이 정상적으로 Load되지 않는다...
 이 경우 JAVA_OPTS를 사용해서 log4j.properties 파일을 Spark이 사용할 수 있도록 해줄 수 있다.
 
-```
+```scala
 ./spark-application -Dlog4j.configuration=file:$SPARK_HOME/conf/log4j.properties
 ```
 

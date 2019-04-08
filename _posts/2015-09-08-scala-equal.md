@@ -243,7 +243,7 @@ res0: Boolean = true
 
 아래와 같은 Tree를 만든다고 하면:
 
-```
+```scala
 trait Tree[+T] {
   def elem: T
   def left: Tree[T]
@@ -262,7 +262,7 @@ class Branch[T](
 
 `equals`은 모든 엘리먼트가 포함되게 한다:
 
-```
+```scala
 override def equals(other: Any) = other match {
   case that: Branch[_] => (that canEqual this) &&
     this.elem == that.elem &&
@@ -276,13 +276,13 @@ Runtime에 엘리먼트 타입을 알 수 없기 때문에(Type Erasure) Pattern
 
 `canEqual`은 아래처럼 만든다:
 
-```
+```scala
 def canEqual(other: Any) = other.isInstanceOf[Branch[_]]
 ```
 
 `canEqual`을 하는 이유는 타입도 비교해야 하기 때문이다. 아래와 같은 예를 보면 이해가 쉽다:
 
-```
+```scala
 class Cranch[T](elem: T) extends Branch[T](elem, EmptyTree, EmptyTree){}
 class Dranch[T](elem: T) extends Branch[T](elem, EmptyTree, EmptyTree){}
 
@@ -298,7 +298,7 @@ res0: Boolean = true
 
 b1과 b2는 타입이 다른데 true라고 나온다. 아래 와 같이 `canEqual`을 다시 구현하면 된다:
 
-```
+```scala
 class Cranch[T](elem: T) extends Branch[T](elem, EmptyTree, EmptyTree){
   override def canEqual(other: Any) = other.isInstanceOf[Cranch[_]]
 }
@@ -316,7 +316,7 @@ class Dranch[T](elem: T) extends Branch[T](elem, EmptyTree, EmptyTree){
 
 `==`는 override할 수 없다:
 
-```
+```scala
 final def == (that: Any): Boolean =
   if (null eq this) {null eq that} else {this equals that}
 ```
@@ -325,7 +325,7 @@ final def == (that: Any): Boolean =
 
 #### Pitfall #1: Defining equals with the wrong signature.
 
-```
+```scala
 class Point(val x: Int, val y: Int) {
   // An utterly wrong definition of equals
   def equals(other: Point): Boolean = this.x == other.x && this.y == other.y
@@ -336,7 +336,7 @@ class Point(val x: Int, val y: Int) {
 
 override할 거면 아래처럼 해야 한다:
 
-```
+```scala
 // A better definition, but still not perfect
 override def equals(other: Any) = other match {
   case that: Point => this.x == that.x && this.y == that.y
@@ -350,7 +350,7 @@ override def equals(other: Any) = other match {
 
 Hash Bucket 구조로 된 Collection은 `equals`과 `hashCode`는 함께 바꿔야 한다:
 
-```
+```scala
 class Point(val x: Int, val y: Int) {
   override def hashCode = 41 * (41 + x) + y
   override def equals(other: Any) = other match {
@@ -366,7 +366,7 @@ class Point(val x: Int, val y: Int) {
 
 아래처럼 var로 만들지 말 것:
 
-```
+```scala
 case class A(var x: Int)
 
 val hs = HashSet[A]()
@@ -395,7 +395,7 @@ the objects is modified.
 
 아래와 같은 Tree를 만든다고 하면:
 
-```
+```scala
 trait Tree[+T] {
   def elem: T
   def left: Tree[T]
@@ -414,7 +414,7 @@ class Branch[T](
 
 `equals`은 모든 엘리먼트가 포함되게 한다:
 
-```
+```scala
 override def equals(other: Any) = other match {
   case that: Branch[_] => (that canEqual this) &&
     this.elem == that.elem &&
@@ -428,13 +428,13 @@ Runtime에 엘리먼트 타입을 알 수 없기 때문에(Type Erasure) Pattern
 
 `canEqual`은 아래처럼 만든다:
 
-```
+```scala
 def canEqual(other: Any) = other.isInstanceOf[Branch[_]]
 ```
 
 `canEqual`을 하는 이유는 타입도 비교해야 하기 때문이다. 아래와 같은 예를 보면 이해가 쉽다:
 
-```
+```scala
 class Cranch[T](elem: T) extends Branch[T](elem, EmptyTree, EmptyTree){}
 class Dranch[T](elem: T) extends Branch[T](elem, EmptyTree, EmptyTree){}
 
@@ -450,7 +450,7 @@ res0: Boolean = true
 
 b1과 b2는 타입이 다른데 true라고 나온다. 아래 와 같이 `canEqual`을 다시 구현하면 된다:
 
-```
+```scala
 class Cranch[T](elem: T) extends Branch[T](elem, EmptyTree, EmptyTree){
   override def canEqual(other: Any) = other.isInstanceOf[Cranch[_]]
 }
@@ -467,7 +467,7 @@ class Dranch[T](elem: T) extends Branch[T](elem, EmptyTree, EmptyTree){
 
 `hashCode`는 소수를 곱하고 더해서 만든다. 빠진 필드 없이 곱하고 더한다. Overflow시 정보 손실을 적게 하려고 소수(odd prime number)를 이용한다는데 이것도 모르겠다:
 
-```
+```scala
 override def hashCode: Int =
   41 * (
     41 * (
@@ -485,7 +485,7 @@ al Type의 정의:
 
 `hashCode`는 소수를 곱하고 더해서 만든다. 빠진 필드 없이 곱하고 더한다. Overflow시 정보 손실을 적게 하려고 소수(odd prime number)를 이용한다는데 이것도 모르겠다:
 
-```
+```scala
 override def hashCode: Int =
   41 * (
     41 * (

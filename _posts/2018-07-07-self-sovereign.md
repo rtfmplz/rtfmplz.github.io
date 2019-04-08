@@ -64,7 +64,7 @@ comments: true
 
 ![verifiable-claim](/images/posts/self-sovereign/verifiable-claim.png)
 
-```
+```scala
 Issuer   -     Owner      - Verifier
  은행     -       나        - 상인
  CA      -    web site    - 나

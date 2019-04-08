@@ -117,7 +117,7 @@ dom match {
 * 가변 길이를 처리 할 때는 `unapplySeq` 익스트랙터 메소드를 사용한다.
 	* 결과 타입은 `Option[Seq[T]]`을 만족해야 한다.
 
-```
+```scala
 Object Domain { 
 	// 인젝선 매소드(선택적)
 	def apply(parts : String* ): String =		parts.reverse.mkString(".")

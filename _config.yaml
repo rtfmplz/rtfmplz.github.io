@@ -13,9 +13,9 @@ permalink: /:categories/:year/:month/:day/:title
 author:
     name: Jae Lee
     email: kjlee.ko@gmail.com
-    pages: rtfmplz.github.io
-    linkedin: linkedin.com/in/rtfmplz
-    github: github.com/rtfmplz
+    pages: https://rtfmplz.github.io
+    linkedin: https://linkedin.com/in/rtfmplz
+    github: https://github.com/rtfmplz
 
 
 # Jekyll 의 환경설정 옵션들에 대한 디폴트 값 목록은 아래 링크에서 확인할 수 있다.

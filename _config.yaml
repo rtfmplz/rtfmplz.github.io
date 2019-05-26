@@ -4,6 +4,7 @@
 
 # 사이트 변수: site.title 과 같은 방식으로 사용된다.
 title: JAE의 기술 블로그
+url: https://rtfmplz.github.io
 description: |
   JAE의 개인 기술 블로그 입니다.
   개인적으로 공부한 내용들을 기록하기 위한 블로그 입니다.

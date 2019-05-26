@@ -1,11 +1,8 @@
 ---
-layout: default
+layout: page
+title: About me
+author: Jae
 ---
-
-<img id="profile-img" src="/images/private/jae.jpeg" alt="jae" />
-
-
-## About me
 
 #### 이경재 / Jae Lee
 * 역사 학자가 되고싶었지만 전자통신공학을 전공하고 현재는 소프트웨어 개발을 한다고는하나 이것저것 시키는건 다하는 생계형 개발자

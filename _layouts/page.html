@@ -1,0 +1,14 @@
+---
+layout: default
+---
+
+<div class="page">
+  <!-- profile-img id를 적용 -->
+  {% if page.title != "Tags" %}
+  <img id="profile-img" src="/images/private/jae.jpeg" alt="jae" />
+  {% endif%}
+
+  <h1 class="page-title">{{ page.title }}</h1>
+
+  {{ content }}
+</div>

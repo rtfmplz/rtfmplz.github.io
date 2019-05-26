@@ -1,13 +1,8 @@
 ---
-layout: default
-title: 
+layout: page
+title: Blog Posts
 author: Jae
 ---
-
-<!-- profile-img id를 적용 -->
-<img id="profile-img" src="/images/private/jae.jpeg" alt="jae" />
-
-### Blog Posts
 
 <ul class="posts">
     {% for post in site.posts %}

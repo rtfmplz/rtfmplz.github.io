@@ -1,0 +1,33 @@
+/*******************************************/
+/*            개인적으로 추가한 ID             */
+/*******************************************/
+body {
+    color: #444;
+    font-family: Monaco, "Courier New", monospace;
+    font-size: 80%;
+    margin: 6rem auto 1rem;
+    max-width: 48rem;
+    text-align: left;
+}
+
+/*
+   * prifile-img의 디자인을 위한 id
+   */
+#profile-img {
+    border-radius: 50%;
+    height: 200px;
+    margin: 0 auto;
+    width: 200px;
+}
+
+/*
+   * post list의 날짜의 디자인을 위한 class
+   */
+ul.posts span {
+    color: #aaa;
+    font-size: 90%;
+}
+
+ul.about span {
+    color: #aaa;
+}

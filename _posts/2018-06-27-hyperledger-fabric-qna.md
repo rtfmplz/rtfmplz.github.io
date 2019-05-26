@@ -1,7 +1,7 @@
 ---
-layout: default
+layout: post
 title: Hyperledger Fabric Q&A
-category: post
+tags: [hyperledger-fabric]
 author: Jae
 comments: true
 ---

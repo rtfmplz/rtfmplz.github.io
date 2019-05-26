@@ -1,7 +1,7 @@
 ---
-layout: default
+layout: post
 title: What is Spark RDD
-category: post
+tags: [spark, rdd]
 author: Jae
 comments: true
 ---

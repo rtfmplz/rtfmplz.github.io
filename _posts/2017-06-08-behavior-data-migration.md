@@ -1,7 +1,7 @@
 ---
-layout: default
+layout: post
 title: JAE's journey migrating 1TB of RDBMS data to Hadoop using SPARK
-category: post
+tags: [hdfs, migration, troubleshooting]
 author: Jae
 comments: true
 ---

@@ -1,7 +1,7 @@
 ---
-layout: default
+layout: post
 title: Self-Sovereign
-category: post
+tags: [self-sovereign]
 author: Jae
 comments: true
 ---

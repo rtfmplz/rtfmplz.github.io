@@ -1,7 +1,7 @@
 ---
-layout: default
+layout: post
 title: Spark의 OutOfMemoryError 분석
-category: post
+tags: [spark, troubleshooting]
 author: Jae
 comments: true
 ---

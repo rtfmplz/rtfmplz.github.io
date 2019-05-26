@@ -1,7 +1,7 @@
 ---
-layout: default
+layout: post
 title: 객체를 사용한 모듈화 프로그래밍
-category: post
+tags: [scala, PIS, object]
 author: Jae
 comments: true
 ---

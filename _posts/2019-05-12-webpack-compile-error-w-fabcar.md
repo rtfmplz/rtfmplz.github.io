@@ -1,7 +1,7 @@
 ---
-layout: default
+layout: post
 title: Webpack compile error with "fabric-client"
-category: post
+tags: [hyperledger-fabric, node.js, webpack, browser, troubleshooting]
 author: Jae
 comments: true
 ---

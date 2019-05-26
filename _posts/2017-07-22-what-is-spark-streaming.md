@@ -1,7 +1,7 @@
 ---
-layout: default
+layout: post
 title: What is Spark Streaming ?
-category: post
+tags: [spark, spark-streaming]
 author: Jae
 comments: true
 ---

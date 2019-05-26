@@ -1,7 +1,7 @@
 ---
-layout: default
+layout: post
 title: Hyperledger Fabric v1.0 - Deep Dive
-category: post
+tags: [hyperledger-fabric]
 author: Jae
 comments: true
 ---

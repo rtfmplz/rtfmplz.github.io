@@ -1,7 +1,7 @@
 ---
-layout: default
+layout: post
 title: Futures and Concurrency in Scala
-category: post
+tags: [scala, PIS, Future, Concurrency]
 author: Jae
 comments: true
 ---

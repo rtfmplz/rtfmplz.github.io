@@ -1,7 +1,7 @@
 ---
-layout: default
+layout: post
 title: uPort
-category: post
+tags: [self-sovereign]
 author: Jae
 comments: true
 ---

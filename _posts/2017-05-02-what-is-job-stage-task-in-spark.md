@@ -1,7 +1,7 @@
 ---
-layout: default
+layout: post
 title: What is job, stage, task in spark
-category: post
+tags: [spark]
 author: Jae
 comments: true
 ---

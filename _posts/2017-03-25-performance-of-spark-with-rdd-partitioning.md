@@ -1,7 +1,7 @@
 ---
-layout: default
+layout: post
 title: Performance of Spark with RDD partitioning
-category: post
+tags: [spark, rdd, performance]
 author: Jae
 comments: true
 ---

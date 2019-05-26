@@ -1,7 +1,7 @@
 ---
-layout: default
+layout: post
 title: Apache zeppelin with Spark
-category: post
+tags: [spark, zeppelin]
 author: Jae
 comments: true
 ---

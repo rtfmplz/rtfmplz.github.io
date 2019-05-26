@@ -1,7 +1,7 @@
 ---
-layout: default
+layout: post
 title: 리스트 구현 in Scala
-category: post
+tags: [scala, PIS, list]
 author: Jae
 comments: true
 ---

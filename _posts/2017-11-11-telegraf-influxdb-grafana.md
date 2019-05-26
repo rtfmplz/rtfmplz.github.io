@@ -1,7 +1,7 @@
 ---
-layout: default
+layout: post
 title: Legacy System 의 Event Log 및 시스템 상태 모니터링 하기
-category: post
+tags: [logging]
 author: Jae
 comments: true
 ---

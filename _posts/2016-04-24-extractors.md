@@ -1,7 +1,7 @@
 ---
-layout: default
+layout: post
 title: 익스트랙터 in Scala
-category: post
+tags: [scala, PIS, extractor]
 author: Jae
 comments: true
 ---

@@ -1,7 +1,7 @@
 ---
-layout: default
+layout: post
 title: Zookeeper
-category: post
+tags: [ZooKeeper]
 author: Jae
 comments: true
 ---

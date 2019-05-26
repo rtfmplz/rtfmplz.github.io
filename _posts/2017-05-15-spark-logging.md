@@ -1,7 +1,7 @@
 ---
-layout: default
+layout: post
 title: Spark Logging 정리
-category: post
+tags: [spark]
 author: Jae
 comments: true
 ---

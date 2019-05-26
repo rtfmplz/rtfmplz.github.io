@@ -1,7 +1,7 @@
 ---
-layout: default
+layout: post
 title: Scala App Packaging in SBT
-category: post
+tags: [scala, packaging]
 author: Jae
 comments: true
 ---

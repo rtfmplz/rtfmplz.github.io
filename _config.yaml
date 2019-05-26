@@ -4,7 +4,11 @@
 
 # 사이트 변수: site.title 과 같은 방식으로 사용된다.
 title: JAE의 기술 블로그
-description: JAE의 개인 기술 블로그 입니다.
+description: |
+  JAE의 개인 기술 블로그 입니다.
+  개인적으로 공부한 내용들을 기록하기 위한 블로그 입니다.
+  책 또는 기술 문서를 정리하거나, 개인적인 문제 해결 경험 등을 위주로 포스팅 하였습니다.
+  잘못된 내용이나 출처가 누락된 부분을 발견하시면 메일 또는 댓글 남겨주세요!! :)
 
 # For more see: http://jekyllrb-ko.github.io/docs/permalinks/
 permalink: /:categories/:year/:month/:day/:title 
@@ -28,9 +32,7 @@ sass:
 exclude:
     - node_modules
 
-markdown: redcarpet
-redcarpet:
-    extensions: ["no_intra_emphasis", "tables", "autolink", "strikethrough", "with_toc_data"]
+markdown: kramdown
 
 gems:
     - jekyll-sitemap

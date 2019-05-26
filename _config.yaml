@@ -25,14 +25,13 @@ author:
 # Jekyll 의 환경설정 옵션들에 대한 디폴트 값 목록은 아래 링크에서 확인할 수 있다.
 # @see: http://jekyllrb-ko.github.io/docs/configuration/#section-4
 
+
+markdown: kramdown
+paginate: 15
+
+exclude: [node_modules]
+gems: [jekyll-paginate, jekyll-sitemap]
+
 sass:
     sass_dir: _sass
     style: compressed
-
-exclude:
-    - node_modules
-
-markdown: kramdown
-
-gems:
-    - jekyll-sitemap

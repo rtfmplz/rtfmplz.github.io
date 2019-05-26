@@ -10,8 +10,3 @@
 
 ## Contact
 * kjlee.ko@gmail.com
-
-## TODO.... 언젠가... :)
-* navigation bar 개선
-* tag 기능 추가
-* mobile friendly

@@ -90,7 +90,7 @@ facility를 이용해서 서비스를(local0, local1, ..., local7)를 구분할 
 
 ## Test
 
-아래 명령으로 rsyslog, rsyslog_nginx container를 기동시킨다.
+[여기](https://github.com/rtfmplz/fabric-playground/tree/master/example-rsyslogd)에서 아래 명령으로 rsyslog, rsyslog_nginx container를 기동시킨다.
 
 ```bash
 docker-compose up

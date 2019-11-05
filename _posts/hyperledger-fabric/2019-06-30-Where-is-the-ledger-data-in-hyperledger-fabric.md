@@ -6,7 +6,6 @@ author: Jae
 comments: true
 ---
 
-
 # Where is the ledger data in hyperledger-fabric
 
 ## 기
@@ -37,6 +36,7 @@ Peer와 Orderer는 각각 `core.yaml`, `orderer.yaml` 파일을 설정 파일로
 # modification that might corrupt the peer operations.
 fileSystemPath: /var/hyperledger/production
 ```
+
 ### Orderer
 
 - orderer.yaml

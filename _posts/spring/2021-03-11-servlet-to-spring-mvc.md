@@ -271,7 +271,7 @@ ${requestScope.result}
 	- `web.xml`(Tomcat Configuration)에는 모든 url에 대해서 `DispatcherServlet`을 호출하도록 하는 설정만 남기고 `/WEB-INF/despacher-servlet.xml`(Spring Configuration)에서 url 매핑을 포함한 다른 모든 설정을 관리하므로써 Tomcat에 대한 의존성을 낮춤
 - Controller를 Servlet이 아닌 POJO로 개발하여 Controller의 재사용성을 높일 수 있음
 
-![mvc.png](:/5c8aa02d0dd64953980ab48cb0ad1460)
+![mvc.png](/images/posts/servlet-to-spring-mvc/5c8aa02d0dd64953980ab48cb0ad1460.png)
 
 ### 요청 처리 순서
 
